@@ -24,3 +24,5 @@ For this project user can provide a large text file or dictionary file containin
 Use a Trie cache using redis cache to store the trie in cache.
 Use a Key value store to store the trie nodes in a hash table form. Every prefix is mapped to a key in the hash table
 Data on each trie node is mapped to a value on the hash table.
+When updating a trie node update from the children node up to the ancestors node with the new frequency
+

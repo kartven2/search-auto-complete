@@ -1,28 +1,28 @@
 # search-auto-complete
-Search auto-complete system
-Design a search auto-complete system using Java Spring MVC, UI web page hosted by embedded tomcat server.
-System should return 5 auto complete suggestions
-Determine the top 5 search words based on frequency count. Historical query frequency.
-No spell check or auto correct is needed
-All search queries have lowercase alphabetical characters.
-As user types a search query autocomplete suggestions must show up fast enough.
-Results returned by the system must be sorted by frequency
-For every character entered into the search box a client sends a request to the backend for autocomplete suggestions
-Two main services Data gathering service and query service.
-Data gathering service:
-Similar to a frequency table with word and corresponding frequency
-Query service:
-When a user types a letter in the search box retrieve the top 5 searched queries
-Use a trie data structure to store the data and for queries
-Implement Trie node to store frequency info. Add frequency info to the nodes.
-Find the prefix node, Traverse subtree to get all children nodes with respective frequencies.
-Sort the children and get the top 5 words.
-UI must be simple with just 1 text field box.
-Cache top queries at each node. Store top k most frequently used queries at each node.
-Data Gathering service. Build the trie based on user input.
-For this project user can provide a large text file or dictionary file containing all the words that can be used to build the trie.
-Use a Trie cache using redis cache to store the trie in cache.
-Use a Key value store to store the trie nodes in a hash table form. Every prefix is mapped to a key in the hash table
-Data on each trie node is mapped to a value on the hash table.
-When updating a trie node update from the children node up to the ancestors node with the new frequency
+- Search auto-complete system
+- Design a search auto-complete system using Java Spring MVC, UI web page hosted by embedded tomcat server.
+- System should return 5 auto complete suggestions
+- Determine the top 5 search words based on frequency count. Historical query frequency.
+- No spell check or auto correct is needed
+- All search queries have lowercase alphabetical characters.
+- As user types a search query autocomplete suggestions must show up fast enough.
+- Results returned by the system must be sorted by frequency
+- For every character entered into the search box a client sends a request to the backend for autocomplete suggestions
+- Two main services Data gathering service and query service.
+- Data gathering service:
+- Similar to a frequency table with word and corresponding frequency
+- Query service:
+- When a user types a letter in the search box retrieve the top 5 searched queries
+- Use a trie data structure to store the data and for queries
+- Implement Trie node to store frequency info. Add frequency info to the nodes.
+- Find the prefix node, Traverse subtree to get all children nodes with respective frequencies.
+- Sort the children and get the top 5 words.
+- UI must be simple with just 1 text field box.
+- Cache top queries at each node. Store top k most frequently used queries at each node.
+- Data Gathering service. Build the trie based on user input.
+- For this project user can provide a large text file or dictionary file containing all the words that can be used to build the trie.
+- Use a Trie cache using redis cache to store the trie in cache.
+- Use a Key value store to store the trie nodes in a hash table form. Every prefix is mapped to a key in the hash table
+- Data on each trie node is mapped to a value on the hash table.
+- When updating a trie node update from the children node up to the ancestors node with the new frequency
 
